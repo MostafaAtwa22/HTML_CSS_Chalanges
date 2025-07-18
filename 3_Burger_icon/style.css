@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0
+}
+:root {
+    --main-color: rgb(0 116 255)
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif
+}
+.menu-icon {
+    cursor: pointer
+}
+.menu-icon span {
+    display: block;
+    width: 120px;
+    height: 10px;
+    background-color: #333;
+    margin-top: 20px;
+    transition: all 0.5s ease
+}
+.menu-icon:hover span:last-child{
+    background-color: red;
+    transform: translateY(-30px) rotate(45deg)
+}
+.menu-icon:hover span:first-child {
+    background-color: red;
+    transform: translateY(30px) rotate(-45deg)
+}
+.menu-icon:hover span:nth-child(2) {
+    background-color: transparent
+}

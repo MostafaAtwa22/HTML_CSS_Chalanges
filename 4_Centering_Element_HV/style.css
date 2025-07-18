@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+:root {
+    --main-color: #eeeeee;
+    --item-color: #f00;
+}
+.box {
+    width: 800px;
+    height: 300px;
+    background-color: var(--main-color);
+    position: relative;
+    margin: 100px auto;
+}
+.box::before {
+    width: 100%;
+    height: 3px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.box::after {
+    width: 3px;
+    height: 100%;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.box::before, 
+.box::after {
+    content: '';
+    background-color: #ddd;
+    position: absolute;
+}
+.box .item {
+    width: 200px;
+    height: 100px;
+    background-color: var(--item-color);
+    z-index: 2;
+}
+/* Centering the item horizontally and vertically */
+
+/* 1- margin + position */
+/* .box .item {
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    top: 50%;
+    margin-top: -50px;
+} */
+
+/* 2- transfrom + position */
+/* .box .item {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+/* 3- flex */
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
