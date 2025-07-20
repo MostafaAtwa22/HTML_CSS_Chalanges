@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+:root {
+    --main-color: #eeeeee;
+    --item-color: #0075ff;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+form {
+    width: 500px;
+    margin: 100px auto;
+    background-color: var(--main-color);
+    padding: 20px;
+}
+form div {
+    padding: 10px 0;
+}
+form div input[type="radio"] {
+    appearance: none;
+}
+form div label {
+    position: relative;
+    padding-left: 35px;
+    transition: 0.3s;
+}
+form div label::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--item-color);
+    background-color: white;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+form div input[type="radio"]:checked + label::after,
+form div input[type="radio"]:not(:checked):hover + label::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: var(--item-color);
+    top: 50%;
+    left: 4.5px;
+    transform: translateY(-50%);
+}
+form div input[type="radio"]:not(:checked):hover + label::after {
+    opacity: 0.2;
+}
+form div input[type="radio"]:checked + label {
+    color: var(--item-color);
+}
