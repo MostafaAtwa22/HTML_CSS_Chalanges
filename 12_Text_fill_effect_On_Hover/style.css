@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+:root {
+    --main-color: #333;
+    --item-color: rgba(40, 110, 240, 0.767);
+}
+body {
+    font-family: Arial, sans-serif;
+}
+.fill {
+    margin: 50px auto;
+    width: fit-content;
+    -webkit-text-fill-color: white;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    -webkit-text-stroke: 1px #333;
+    position: relative;
+}
+.fill::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    top: 0;
+    left: 0;
+    -webkit-text-fill-color: var(--item-color);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.fill:hover::before {
+    width: 100%;
+}

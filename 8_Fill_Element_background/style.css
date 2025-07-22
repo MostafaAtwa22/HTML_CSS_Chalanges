@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+:root {
+    --main-color: #eeeeee;
+    --item-color: #13ecbdd2;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+.product {
+    position: relative;
+    overflow: hidden;
+    width: 400px;
+    text-align: center;
+    margin: 60px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px #ddd;
+}
+.product:hover h2 {
+    box-shadow: 0 0 0 500px var(--item-color);
+}
+.product:hover {
+    color: white;
+}
+.product h2 {
+    margin: 20px auto;
+    color: white;
+    background-color: var(--item-color);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+}
+.product h3 {
+    transition: 0.5s;
+}
+.product p {
+    margin-top: 20px;
+    line-height: 2;
+    transition: 0.5s;
+}
